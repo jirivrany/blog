@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Static www with flask.py</title>
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700|Exo+2:400,400italic,700,700italic,800,800italic&subset=latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div id="main">
+        {% block content %} {% endblock %}
+    </div>
+    <div id="footer">
+        <div id="footin">
+            <p>
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a>
+            </p>
+            <p>
+            &copy; 2014 Jirka Vraný
+            </p> 
+            <p>
+            <a href="https://twitter.com/barneyalbert"><img src="{{ url_for('static', filename='img/twitter.png') }}" alt="follow me on twitter" /></a>
+
+            <a href="https://plus.google.com/108191380579550495037/posts"><img src="{{ url_for('static', filename='img/googleplus.png') }}" alt="google plus profile" /></a>
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>
