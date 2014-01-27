@@ -36,16 +36,11 @@ def home():
 
     return flask.render_template('index.html', html=html)
 
-@app.route('/user/<username>')
-def show_user_profile(username):
-    # show the user profile for that user
-    return 'User %s' % username    
 
 @app.route('/<topic>/<filename>/')
 def test_param(topic, filename):
-    print topic
-    print filename
-    fname = os.path.join(ROOT, "{}/{}.markdown".format(topic, filename))
+    return "{}/{}.markdown".format(topic, filename)
+    fname = os.path.join(ROOT, None)
     try:
         input_file = io.open(fname, encoding="utf-8")
     except IOError:
