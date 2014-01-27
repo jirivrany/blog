@@ -37,9 +37,9 @@ def home():
     return flask.render_template('index.html', html=html)
 
 
-@app.route('/<topic>/<filename>/')
-def test_param(topic, filename):
-    return "{}/{}.markdown".format(topic, filename)
+@app.route('/<topic>/<title>/')
+def test_param(topic, title):
+    return "{}.markdown".format(topic)
     fname = os.path.join(ROOT, None)
     try:
         input_file = io.open(fname, encoding="utf-8")
