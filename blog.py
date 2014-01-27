@@ -21,9 +21,9 @@ app.debug = True
 
 @app.route('/')
 def home():
-    input_file = codecs.open("pages/python/pokus.markdown", mode="r", encoding="utf-8")
-    text = input_file.read()
-    html = markdown.markdown(text, extensions=['codehilite'])
+    #input_file = codecs.open("pages/python/pokus.markdown", mode="r", encoding="utf-8")
+    #text = input_file.read()
+    #html = markdown.markdown(text, extensions=['codehilite'])
     return flask.render_template('index.html', html=html)
 
 @app.route('/<topic>/<filename>/')
