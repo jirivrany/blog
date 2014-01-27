@@ -17,6 +17,9 @@ body {
     text-align: center;
 }
 
+.homepage ul {
+    list-style: none;
+}
 
 
 /* Code Hilite */

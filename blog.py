@@ -25,14 +25,14 @@ ROOT = os.path.join(app.root_path, u'pages')
 
 @app.route('/')
 def home():
-    name = 'python/pokus.markdown'
+    name = 'index.markdown'
     filename = os.path.join(ROOT, name)
     try:
         input_file = io.open(filename, encoding="utf-8")
         text = input_file.read()
         html = markdown.markdown(text, extensions=['codehilite'])
     except IOError:
-        html = "<h1>{}</h1>".format(filename)
+        html = "<h1>%s</h1>" % filename
 
     return flask.render_template('index.html', html=html)
 
