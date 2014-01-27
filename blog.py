@@ -20,11 +20,7 @@ app = flask.Flask(__name__)
 app.debug = True
 
 @app.route('/')
-def hello():
-   raise Exception('Deliberate exception raised')
-
-@app.route('/index/')
-def hiorme():
+def home():
     input_file = codecs.open("pages/python/pokus.markdown", mode="r", encoding="utf-8")
     text = input_file.read()
     html = markdown.markdown(text, extensions=['codehilite'])
