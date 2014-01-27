@@ -21,25 +21,26 @@ import io
 app = flask.Flask(__name__)
 app.debug = True
 
+ROOT = os.path.join(app.root_path, u'pages')
+
 @app.route('/')
 def home():
-    root = os.path.join(app.root_path, u'pages')
-    suffix = '.markdown'
-    name = 'python/pokus'
-    filename = os.path.join(root, name) + suffix
+    name = 'python/pokus.markdown'
+    filename = os.path.join(ROOT, name)
     try:
         input_file = io.open(filename, encoding="utf-8")
         text = input_file.read()
         html = markdown.markdown(text, extensions=['codehilite'])
     except IOError:
         html = "<h1>{}</h1>".format(filename)
-            
+
     return flask.render_template('index.html', html=html)
 
 @app.route('/<topic>/<filename>/')
 def test_param(topic, filename):
+    filename = os.path.join(ROOT, "{}/{}.markdown".format(topic, filename))
     try:
-        input_file = io.open("pages/{}/{}.markdown".format(topic, filename), encoding="utf-8")
+        input_file = io.open(filename, encoding="utf-8")
     except IOError:
         flask.abort(404)
     else:        
