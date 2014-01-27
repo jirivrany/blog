@@ -38,6 +38,8 @@ def home():
 
 @app.route('/<topic>/<filename>/')
 def test_param(topic, filename):
+    print topic
+    print filename
     fname = os.path.join(ROOT, "{}/{}.markdown".format(topic, filename))
     try:
         input_file = io.open(fname, encoding="utf-8")
