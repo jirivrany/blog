@@ -18,7 +18,11 @@ import codecs
 
 app = flask.Flask(__name__)
 
-@app.route('/', methods=['GET'])
+@app.route('/')
+def hello():
+   raise Exception('Deliberate exception raised')
+
+@app.route('/index/')
 def hiorme():
     input_file = codecs.open("pages/python/pokus.markdown", mode="r", encoding="utf-8")
     text = input_file.read()
