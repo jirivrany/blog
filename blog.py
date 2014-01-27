@@ -39,8 +39,8 @@ def home():
 
 @app.route('/<topic>/<title>/')
 def test_param(topic, title):
-    return "{}.markdown".format(topic)
-    fname = os.path.join(ROOT, None)
+    filename = "%s/%s.markdown" % (topic, title)
+    fname = os.path.join(ROOT, filename)
     try:
         input_file = io.open(fname, encoding="utf-8")
     except IOError:
