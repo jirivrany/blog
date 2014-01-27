@@ -17,6 +17,7 @@ import markdown
 import codecs
 
 app = flask.Flask(__name__)
+app.debug = True
 
 @app.route('/')
 def hello():
