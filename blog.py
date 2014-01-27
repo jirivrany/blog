@@ -24,6 +24,7 @@ def home():
     #input_file = codecs.open("pages/python/pokus.markdown", mode="r", encoding="utf-8")
     #text = input_file.read()
     #html = markdown.markdown(text, extensions=['codehilite'])
+    html = '<h1>hello world</h1>'
     return flask.render_template('index.html', html=html)
 
 @app.route('/<topic>/<filename>/')
