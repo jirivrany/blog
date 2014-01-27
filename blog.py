@@ -15,16 +15,20 @@ frozen flask ? statická stránka
 import flask
 import markdown
 import codecs
+import os
 
 app = flask.Flask(__name__)
 app.debug = True
 
 @app.route('/')
 def home():
-    #input_file = codecs.open("pages/python/pokus.markdown", mode="r", encoding="utf-8")
-    #text = input_file.read()
-    #html = markdown.markdown(text, extensions=['codehilite'])
-    html = '<h1>hello world</h1>'
+    root = os.path.join(app.root_path, u'pages')
+    suffix = '.markdown'
+    name = 'python/pokus'
+    filename = os.path.join(root, name) + suffix
+    input_file = codecs.open(filename, mode="r", encoding="utf-8")
+    text = input_file.read()
+    html = markdown.markdown(text, extensions=['codehilite'])
     return flask.render_template('index.html', html=html)
 
 @app.route('/<topic>/<filename>/')
