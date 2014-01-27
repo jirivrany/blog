@@ -16,6 +16,7 @@ import flask
 import markdown
 import codecs
 import os
+import io
 
 app = flask.Flask(__name__)
 app.debug = True
@@ -26,15 +27,19 @@ def home():
     suffix = '.markdown'
     name = 'python/pokus'
     filename = os.path.join(root, name) + suffix
-    input_file = codecs.open(filename, mode="r", encoding="utf-8")
-    text = input_file.read()
-    html = markdown.markdown(text, extensions=['codehilite'])
+    try:
+        input_file = io.open(filename, encoding="utf-8")
+        text = input_file.read()
+        html = markdown.markdown(text, extensions=['codehilite'])
+    except IOError:
+        html = "<h1>{}</h1>".format(filename)
+            
     return flask.render_template('index.html', html=html)
 
 @app.route('/<topic>/<filename>/')
 def test_param(topic, filename):
     try:
-        input_file = codecs.open("pages/{}/{}.markdown".format(topic, filename), mode="r", encoding="utf-8")
+        input_file = io.open("pages/{}/{}.markdown".format(topic, filename), encoding="utf-8")
     except IOError:
         flask.abort(404)
     else:        
