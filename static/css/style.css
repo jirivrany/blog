@@ -31,6 +31,10 @@ padding: 1em;
     list-style: none;
 }
 
+a {
+    color: #ffc600;
+}
+
 
 /* Code Hilite */
 .codehilite { 
@@ -38,9 +42,11 @@ padding: 1em;
     padding: 10px;
     font-family: 'Inconsolata', sans-serif;
     border:2px solid #49483e;
+    color: #f8f8f2;
     border-radius:5px;
     box-shadow: 2px 2px 2px #888888;
 }
+
 .codehilite .hll { background-color: #49483e }
 .codehilite .c { color: #75715e } /* Comment */
 .codehilite .err { color: #960050; background-color: #1e0010 } /* Error */
