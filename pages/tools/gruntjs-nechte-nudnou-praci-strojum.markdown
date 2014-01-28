@@ -1,4 +1,4 @@
-# GruntJS - nechte práci strojům
+# GruntJS - nechte nudnou práci strojům
 
 Příklad použití Grunt JS pro automatizaci rutinních činností, předvedený na
 setkání vývojařů GDG SCL Liberec 5.12.2013.
