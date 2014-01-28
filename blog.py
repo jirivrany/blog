@@ -39,9 +39,9 @@ def home():
 
 @app.route('/deploy/', methods=['POST'])
 def deploy():
-    payload = json.loads(flask.request.data)
-    url = payload['repository']['url']
-    print url
+    with open('debug.txt', 'w') as debug:
+        debug.write(flask.request.data)
+    
     return "ok"
 
 @app.route('/deploy/', methods=['GET'])
