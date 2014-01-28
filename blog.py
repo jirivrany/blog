@@ -39,7 +39,8 @@ def home():
 
 @app.route('/deploy/', methods=['POST'])
 def deploy():
-    with open('debug.txt', 'w') as debug:
+    fname = os.path.join(app.root_path, u'debug.txt')
+    with open(fname, 'w') as debug:
         debug.write(flask.request.data)
     
     return "ok"
