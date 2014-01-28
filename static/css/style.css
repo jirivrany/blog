@@ -5,10 +5,20 @@ body {
 }
 
 #main {
-    margin: 0 auto;
-    padding: 1em;
-    width: 80%;
-    
+   margin: 0 auto;
+padding: 1em; 
+}
+
+@media all and (max-width: 949px){
+    #main {
+        width: 96%;    
+    }
+}
+
+@media all and (min-width: 950px){
+    #main {
+        width: 950px;    
+    }
 }
 
 #footer {
