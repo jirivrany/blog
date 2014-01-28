@@ -1,7 +1,7 @@
 #Texty o programování
 
 
-##Python
+##Nástroje všeho druhu
 
-* [pokus](/python/pokus/)
-* [dlouhý nadpis](/python/test-long-name/) 
+* [GruntJS - nechte práci strojům](/tools/gruntjs-nechte-praci-strojum/)
+
