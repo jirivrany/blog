@@ -60,7 +60,7 @@ def test_param(topic, title):
     else:        
         text = input_file.read()
         html = markdown.markdown(text, extensions=['codehilite'])
-        return flask.render_template('index.html', html=html)
+        return flask.render_template('page.html', html=html)
 
 @app.errorhandler(404)
 def page_not_found(error):
