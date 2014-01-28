@@ -17,6 +17,7 @@ import markdown
 import codecs
 import os
 import io
+import json
 
 app = flask.Flask(__name__)
 app.debug = True
@@ -35,6 +36,17 @@ def home():
         html = "<h1>%s</h1>" % filename
 
     return flask.render_template('index.html', html=html)
+
+@app.route('/deploy/', methods=['POST'])
+def deploy():
+    payload = json.loads(flask.request.data)
+    url = payload['repository']['url']
+    print url
+    return "ok"
+
+@app.route('/deploy/', methods=['GET'])
+def deploy_get():
+    flask.abort(404)
 
 
 @app.route('/<topic>/<title>/')
