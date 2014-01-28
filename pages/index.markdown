@@ -3,5 +3,5 @@
 
 ##Nástroje všeho druhu
 
-* [GruntJS - nechte práci strojům](/tools/gruntjs-nechte-praci-strojum/)
+* [GruntJS - nechte nudnou práci strojům](/tools/gruntjs-nechte-nudnou-praci-strojum/) - 2013
 
