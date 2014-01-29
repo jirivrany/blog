@@ -6,9 +6,9 @@ markdown pro zápis
 syntax highlite pro zdrojáky
 permalinky jeden-clanek-jaro-nedela
 štítky
-vyzkoušet si mongoDB ?
+vyzkoušet si mongoDB ? - to je overkill na tohle
 cache - https://github.com/thadeusb/flask-cache/ ?
-frozen flask ? statická stránka
+frozen flask ? statická stránka - lepší necha to na fw
 
 '''
 
