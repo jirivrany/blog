@@ -13,6 +13,8 @@ permalinky jeden-clanek-jaro-nedela - mám
 #vyřazeno
 vyzkoušet si mongoDB ? - to je overkill na tohle
 frozen flask ? statická stránka - lepší necha to na fw
+
+ch
 '''
 
 import flask
