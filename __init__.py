@@ -2,14 +2,15 @@
 '''
 co chci?
 minimalistický systém 
-markdown pro zápis
-syntax highlite pro zdrojáky
-permalinky jeden-clanek-jaro-nedela
-štítky
-vyzkoušet si mongoDB ? - to je overkill na tohle
+markdown pro zápis - mám
+syntax highlite pro zdrojáky - mám
+permalinky jeden-clanek-jaro-nedela - mám
+štítky - přes kategorie
 cache - https://github.com/thadeusb/flask-cache/ ?
-frozen flask ? statická stránka - lepší necha to na fw
 
+vyřazeno
+vyzkoušet si mongoDB ? - to je overkill na tohle
+frozen flask ? statická stránka - lepší necha to na fw
 '''
 
 import flask
