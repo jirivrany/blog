@@ -1,11 +1,11 @@
 # -*- coding: utf8 -*-    
 '''
 co chci?
-minimalistický systém 
+minimalistický systém  - mám
 markdown pro zápis - mám
 syntax highlite pro zdrojáky - mám
 permalinky jeden-clanek-jaro-nedela - mám
-štítky - přes kategorie
+štítky - přes kategorie?
 cache - https://github.com/thadeusb/flask-cache/ ?
 
 vyřazeno
