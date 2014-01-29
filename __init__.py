@@ -10,7 +10,6 @@ markdown pro zápis - mám
 syntax highlite pro zdrojáky - mám
 permalinky jeden-clanek-jaro-nedela - mám
 
-
 #vyřazeno
 vyzkoušet si mongoDB ? - to je overkill na tohle
 frozen flask ? statická stránka - lepší necha to na fw
@@ -40,18 +39,6 @@ def home():
         html = "<h1>%s</h1>" % filename
 
     return flask.render_template('index.html', html=html)
-
-@app.route('/deploy/', methods=['POST'])
-def deploy():
-    jsondata = json.loads(flask.request.data)
-    url = jsondata['repository']['url']
-    print url
-    return "ok"
-
-@app.route('/deploy/', methods=['GET'])
-def deploy_get():
-    flask.abort(404)
-
 
 @app.route('/<topic>/<title>/')
 def test_param(topic, title):
