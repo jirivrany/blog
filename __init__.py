@@ -8,6 +8,8 @@ permalinky jeden-clanek-jaro-nedela - mám
 štítky - přes kategorie?
 cache - https://github.com/thadeusb/flask-cache/ ?
 
+se to nepo...
+
 vyřazeno
 vyzkoušet si mongoDB ? - to je overkill na tohle
 frozen flask ? statická stránka - lepší necha to na fw
