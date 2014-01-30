@@ -1,7 +1,7 @@
 #Python Dictionary snadno a rychle
 
 Důvody proč programovat v Pythonu jsou určitě jiné než rychlost běhu výsledných aplikaci.
-To ale není důvod rezignovat na různé možnostmi optimalizace a zrychlení vlastního kódu. V tomhle článku se konkrétně podíváme na slovníky -
+To ale není důvod rezignovat na různé možnosti optimalizace a zrychlení vlastního kódu. V tomhle článku se konkrétně podíváme na slovníky -
 dictionary, jejich vytváření a naplňování daty.
 
 ##Jednou větou
@@ -13,15 +13,15 @@ Nejrychlejší způsob v Pythonu 2.7. i 3.3. je použít _defaultdict_ z balíč
 
 [Slovníky](http://docs.python.org/2/library/stdtypes.html#dict) jsou skvělá datová struktura.
 Zejména pokud máme nějaká data, ve kterých potřebujeme
-chtít opakovaně vyhledávat. Základem jejich implementace je totiž [hašovací tabulka](http://cs.wikipedia.org/wiki/Ha%C5%A1ovac%C3%AD_tabulka).
+opakovaně vyhledávat. Základem jejich implementace je totiž [hašovací tabulka](http://cs.wikipedia.org/wiki/Ha%C5%A1ovac%C3%AD_tabulka).
 
-Pěkným příkladem použití slovníku je základní frekvenční analýza slov
+Pěkným příkladem použití slovníku je například základní frekvenční analýza slov
 v dokumentu. Tedy česky řečeno, chceme spočítat kolikrát se dané slovo v dokumentu
 vyskytuje. Při řešení tohoto problému musíme opakovaně prohledávat množinu již známých slov a inkrementovat čítač. Takže jak na to?
 
 ##Implementace
 
-První postup který většinu lidí napadne, je projít postupně vstupní pole slov a testovat, zda již slovo ve slovníku je nebo není.
+První postup, který většinu lidí napadne, je projít postupně vstupní pole slov. A při tom testovat zda již slovo ve slovníku je nebo není.
 Pokud není, přidáme nový klíč, pokud je, zvedneme počet výskytů o jedničku. Algoritmus můžeme zapsat
 například takto:
 
@@ -37,7 +37,7 @@ například takto:
       return freq
 
 Podmínka existence klíče je nutná, protože bez ní bychom při už prvním slově skončili s výjimkou KeyError.
-Tu samozřejmě můžeme zachytávat. To v Pythonu preferovaný přístup - říkáme tomu
+Tu samozřejmě můžeme zachytávat. To je v Pythonu preferovaný přístup - říkáme tomu
 [EAFP](http://docs.python.org/2/glossary.html). Je snadnější požádat o prominutí,
 než o povolení. V programování dobré, ale v reálném životě to raději nezkoušejte. 
 Fotit si bez povolení například vojenskou základnu by vám taky nemuseli prominout vůbec.
@@ -132,7 +132,7 @@ benchmark za využití modulu [timeit](http://docs.python.org/2/library/timeit.h
 
 Victor byl pracovitý autor, a tak má txt soubor 3.2MB a 3322651 slov. Každý slovník se vytvářel 100x z dat uložených v paměti.
 
-Opět se tedy potvrdilo pravidlo, že built-in funkcionalita je většinou rychlejší, než stejný kód napsaný přímo v Pythonu. Přesněji řečeno, to platí pro CPython, tedy nejrozšířenější z Python interpretů napsaný v jazyce C. 
+Opět se tedy potvrdilo pravidlo, že built-in funkcionalita je většinou rychlejší, než stejný kód napsaný přímo v Pythonu. Přesněji řečeno, to platí pro CPython, tedy nejrozšířenější z Python interpretů napsaný v jazyce C. Tak rozšířený, že se to C na začátku vypouští. 
 
 Srovnáním interpretů můžeme vše zakončit. Předchozí výsledky byly z Pythonu 2.7.6. Python 3.3.2 spuštěný na stejném stroji i datech dosáhl kupodivu horších výsledků. Kupodivu proto, že všeobecně bývá 3 považována za rychlejší.
         
@@ -166,7 +166,9 @@ A jak je na tom [PyPy](http://pypy.org/) - interpret napsaný v [RPythonu](https
     100 calls of function dictget_loc took 6.13185596466 seconds
 
 Čistý Python kód, tedy funkce _classic_ či _dictget_ běží v PyPy rychleji, než kompilovaný C modul defaultdict v Pythonu 2.7.6.  
-PyPy je podle mě velmi zajímavý projekt. Můžeme o tom [diskutovat](http://stackoverflow.com/questions/18946662/why-shouldnt-i-use-pypy-over-cpython-if-pypy-is-6-3-times-faster), můžeme o [tom vést spory](http://stackoverflow.com/questions/2970108/pypy-what-is-all-the-buzz-about) a můžeme s tím nesouhlasit, ale to je tak všechno, co proti tomu můžeme dělat :) Samozřejmě to neznamená, že to má být od zítřka váš hlavní interpret, na to je ještě brzy. Ale sledovat se to určitě vyplatí, pokud vás Python baví.
+PyPy je podle mě velmi zajímavý projekt. Můžeme o tom [diskutovat](http://stackoverflow.com/questions/18946662/why-shouldnt-i-use-pypy-over-cpython-if-pypy-is-6-3-times-faster), můžeme o [tom vést spory](http://stackoverflow.com/questions/2970108/pypy-what-is-all-the-buzz-about) a můžeme s tím nesouhlasit, ale to je tak všechno, co proti tomu můžeme dělat :) 
+
+Samozřejmě to neznamená, že to má být od zítřka váš hlavní interpret, na to je ještě brzy. Ale sledovat se to určitě vyplatí, pokud vás Python baví.
 
 [Kompletní zdrojový kód všech variant](https://gist.github.com/jirivrany/8704099) včetně měřící funkce je samozřejmě k dispozici.
     
