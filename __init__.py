@@ -42,8 +42,8 @@ def home():
     except IOError:
         flask.abort(404)
     else:
-        title = u'Jirka Vraný - texty o programování'
-        return flask.render_template('index.html', html=html, title=title)
+        page_title = u'Jirka Vraný - texty o programování'
+        return flask.render_template('index.html', html=html, title=page_title)
 
 @app.route('/<topic>/<title>/')
 def test_param(topic, title):
@@ -56,8 +56,8 @@ def test_param(topic, title):
     else:        
         text = input_file.read()
         html = markdown.markdown(text, extensions=['codehilite'])
-        title = blogdata.TITLES[title]
-        return flask.render_template('page.html', html=html, title=title)
+        page_title = blogdata.TITLES[title]
+        return flask.render_template('page.html', html=html, title=page_title)
 
 @app.errorhandler(404)
 def page_not_found(error):
