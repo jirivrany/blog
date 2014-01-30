@@ -23,11 +23,13 @@ import codecs
 import os
 import io
 import json
+import blogdata
 
 app = flask.Flask(__name__)
 app.debug = True
 
 ROOT = os.path.join(app.root_path, u'pages')
+
 
 @app.route('/')
 def home():
@@ -38,9 +40,10 @@ def home():
         text = input_file.read()
         html = markdown.markdown(text, extensions=['codehilite'])
     except IOError:
-        html = "<h1>%s</h1>" % filename
-
-    return flask.render_template('index.html', html=html)
+        flask.abort(404)
+    else:
+        title = u'Jirka Vraný - texty o programování'
+        return flask.render_template('index.html', html=html, title=title)
 
 @app.route('/<topic>/<title>/')
 def test_param(topic, title):
@@ -53,7 +56,8 @@ def test_param(topic, title):
     else:        
         text = input_file.read()
         html = markdown.markdown(text, extensions=['codehilite'])
-        return flask.render_template('page.html', html=html)
+        title = blogdata.TITLES[title]
+        return flask.render_template('page.html', html=html, title=title)
 
 @app.errorhandler(404)
 def page_not_found(error):
