@@ -43,7 +43,7 @@ def home():
         flask.abort(404)
     else:
         page_title = u'Jirka Vraný - texty o programování'
-        return flask.render_template('index.html', html=html, title=page_title)
+        return flask.render_template('index.html', mtitle=page_title, html=html)
 
 @app.route('/<topic>/<title>/')
 def test_param(topic, title):
@@ -57,7 +57,7 @@ def test_param(topic, title):
         text = input_file.read()
         html = markdown.markdown(text, extensions=['codehilite'])
         page_title = blogdata.TITLES[title]
-        return flask.render_template('page.html', html=html, title=page_title)
+        return flask.render_template('page.html', mtitle=page_title, html=html)
 
 @app.errorhandler(404)
 def page_not_found(error):
