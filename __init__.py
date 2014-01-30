@@ -57,7 +57,6 @@ def test_param(topic, title):
         text = input_file.read()
         html = markdown.markdown(text, extensions=['codehilite'])
         page_title = blogdata.TITLES[title]
-        var_dump(page_title)
         return flask.render_template('page.html', mtitle=page_title, html=html)
 
 @app.errorhandler(404)
