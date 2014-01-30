@@ -95,7 +95,7 @@ Nicméně, jak si za chvilku ukážeme, i tahle varianta je díky opakovanému v
 pomalejší než první příklad. 
 
 **Nejrychlejší** a zároveň asi nejelegantnější způsob je použít
- _defaultdict_ z balíčku _collections_. Tento speciální slovník se hodí vždy, když pracujeme s
+ [_defaultdict_ z balíčku _collections_](http://docs.python.org/2/library/collections.html#collections.defaultdict). Tento speciální slovník se hodí vždy, když pracujeme s
 hodnotami jednoho a téhož typu. V tomto případě s čísly (int), ale může to být klidně také _list_, _set_ a
 další.
 
