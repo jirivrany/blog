@@ -95,7 +95,7 @@ Nicméně, jak si za chvilku ukážeme, i tahle varianta je díky opakovanému v
 pomalejší než první příklad. 
 
 **Nejrychlejší** a zároveň asi nejelegantnější způsob je použít
-použít _defaultdict_ z balíčku _collections_. Tento speciální slovník se hodí vždy, když pracujeme s
+ _defaultdict_ z balíčku _collections_. Tento speciální slovník se hodí vždy, když pracujeme s
 hodnotami jednoho a téhož typu. V tomto případě s čísly (int), ale může to být klidně také _list_, _set_ a
 další.
 
@@ -165,7 +165,8 @@ A jak je na tom [PyPy](http://pypy.org/) - interpret napsaný v [RPythonu](https
     dictget_loc
     100 calls of function dictget_loc took 6.13185596466 seconds
 
-Čistý Python kód v tomto případě běží dokonce rychleji, než kompilovaný C modul v Pythonu 2.7.6. PyPy je prostě zajímavý projekt. Můžeme o tom [diskutovat](http://stackoverflow.com/questions/18946662/why-shouldnt-i-use-pypy-over-cpython-if-pypy-is-6-3-times-faster), můžeme o [tom vést spory](http://stackoverflow.com/questions/2970108/pypy-what-is-all-the-buzz-about) a můžeme s tím nesouhlasit, ale to je tak všechno, co proti tomu můžeme dělat.
+Čistý Python kód, tedy funkce _classic_ či _dictget_ běží v PyPy rychleji, než kompilovaný C modul defaultdict v Pythonu 2.7.6.  
+PyPy je podle mě velmi zajímavý projekt. Můžeme o tom [diskutovat](http://stackoverflow.com/questions/18946662/why-shouldnt-i-use-pypy-over-cpython-if-pypy-is-6-3-times-faster), můžeme o [tom vést spory](http://stackoverflow.com/questions/2970108/pypy-what-is-all-the-buzz-about) a můžeme s tím nesouhlasit, ale to je tak všechno, co proti tomu můžeme dělat :)
 
 [Kompletní zdrojový kód všech variant](https://gist.github.com/jirivrany/8704099) včetně měřící funkce je samozřejmě k dispozici.
     
