@@ -166,7 +166,7 @@ A jak je na tom [PyPy](http://pypy.org/) - interpret napsaný v [RPythonu](https
     100 calls of function dictget_loc took 6.13185596466 seconds
 
 Čistý Python kód, tedy funkce _classic_ či _dictget_ běží v PyPy rychleji, než kompilovaný C modul defaultdict v Pythonu 2.7.6.  
-PyPy je podle mě velmi zajímavý projekt. Můžeme o tom [diskutovat](http://stackoverflow.com/questions/18946662/why-shouldnt-i-use-pypy-over-cpython-if-pypy-is-6-3-times-faster), můžeme o [tom vést spory](http://stackoverflow.com/questions/2970108/pypy-what-is-all-the-buzz-about) a můžeme s tím nesouhlasit, ale to je tak všechno, co proti tomu můžeme dělat :) 
+PyPy je podle mě velmi zajímavý projekt. Můžeme o tom [diskutovat](http://stackoverflow.com/q/18946662/891401), můžeme o [tom vést spory](http://stackoverflow.com/q/2970108/891401) a můžeme s tím nesouhlasit, ale to je tak všechno, co proti tomu můžeme dělat :) 
 
 Samozřejmě to neznamená, že to má být od zítřka váš hlavní interpret, na to je ještě brzy. Ale sledovat se to určitě vyplatí, pokud vás Python baví.
 
