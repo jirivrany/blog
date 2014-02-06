@@ -1,5 +1,6 @@
-==Blog source code
+Blog
+====
 
-Zdrojové kódy blogu [vrany.nti.tul.cz] - jednoduchá Flask aplikace
+Zdrojové kódy blogu http://vrany.nti.tul.cz/ - jednoduchá Flask aplikace
 
-Source codes of my blog [vrany.nti.tul.cz] - very simple Flask application
+Source codes of my blog http://vrany.nti.tul.cz/ - very simple Flask application
