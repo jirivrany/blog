@@ -2,7 +2,7 @@
 
 Funkce **map**, **reduce** a **filter** jsou důležité stavební prvky funkcionálních programů. Má je i Python i když samozřejmě nejde o čistě funkcionální jazyk.
 
-Jenomže, když některou z těchto funkcí použijeme [Pylint](http://www.pylint.org/) nám zobrazí varování. Prý jde o použití nevhodné built-in funkce. Konkrétně W0141 - _Used builtin function 'map' (bad-builtin)_. Jak velká chyba je použití těchto funkcí? Je opravdu hodně nevýhodné oproti forcyklu nebo generátoru seznamů?
+Jenomže, když některou z těchto funkcí použijeme, [Pylint](http://www.pylint.org/) nám zobrazí varování. Prý jde o použití nevhodné built-in funkce. Konkrétně W0141 - _Used builtin function 'map' (bad-builtin)_. Jak velká chyba je použití těchto funkcí? Je opravdu hodně nevýhodné oproti forcyklu nebo generátoru seznamů?
 
 ##Jednou větou
 
