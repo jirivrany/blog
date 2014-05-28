@@ -19,10 +19,10 @@ příští.
 
 Varianta 2. je dobrá, ale u většiny serverů a to i těch virtuálních je na ně
 potřeba nějak dostat data z lokálního disku. Tedy obvykle alespoň git commit a push. 
-Funkční, ale trochu pomalé. Ne každá změna kterou v kódu udělám je tak velká, aby si
+Funkční, ale trochu pomalé. Ne každá změna, kterou v kódu udělám, je tak velká, aby si
 zasloužila commit.
 
-Varianta 3 funguje velmi dobře na Windows. Je to vlastně z nouze ctnost, ale
+Varianta 3 funguje velmi dobře na Windows. Je to vlastně z nouze ctnost. Ale
 díky absenci balíčkovacího systému a nutnosti instalovat si vše ručně je velmi
 snadné vzít si dvě různé verze nějakého WAMP řešení, třeba [EasyPhp](http://www.easyphp.org/) a provozovat
 je vedle sebe.
@@ -30,20 +30,19 @@ je vedle sebe.
 Na Linuxu je vše v pořádku, pokud potřebuju jen aktuální verzi. Jakmile
 potřebuju ještě nějakou další, začne být balíčkovací systém tak trochu přítěž.
 Díky závislostem mezi balíčky není možné  si jen tak nainstalovat starší
-PHP balíček a doufat, že to nějak bude fungovat. Nebude. Ale i tady je samozřejmě
+PHP balíček a doufat, že to nějak bude fungovat. Obvykle nebude. Ale i tady je samozřejmě
 možné nainstalovat si druhou instanci Apache a PHP, jen je potřeba použít
 kompilaci zdrojových kódů, místo hotových binárek.
 
-Není ale nutné překládat si celého Apache, dvě verze PHP (vlastně i víc) je možné
-provozovat i na jednom. Postačí k tomu některé rozšiřující moduly - např.
+Není ani nutné překládat si celého Apache, dvě verze PHP (vlastně i víc) je možné
+provozovat i na jednom serveru. Postačí k tomu některé rozšiřující moduly - např.
 mod_fcpgi nebo mod_fastcgi a Apache virtuální server.
 
 ## Case study - PHP 2.6.17
 
-Zbytek článku popisuje jednu konkrétní instalaci. Píšu to hlavně proto, že
-patrně budu muset za čas tyto kroky opakovat a ušetří mi to opětovné procházení
-slepých uliček.  Pro jedu starší aplikaci potřebuju mít k dispozici PHP 5.2.
-Aktuálně mám ale na počítači už PHP 5.5. Takže jak na to?
+Zbytek článku popisuje jednu konkrétní instalaci. Vznikl hlavně proto abych si ušetřil opětovné procházení
+slepých uliček. Pro jednu starší aplikaci potřebuju mít k dispozici PHP 5.2.
+Aktuálně mám ale na počítači už PHP 5.5. Takže co s tím?
 
 Základem je přeložit si příslušnou verzi PHP. Zdrojáky starších verzí jsou k
 dispozici v [archivu na webu PHP](http://cz1.php.net/releases/). 
@@ -52,8 +51,9 @@ Stačí tedy najít a stáhnout co potřebuju - v mém případě 5.2.17 - posle
 Vlastní instalace začíná konfigurací. Konfigurační script má opravdu hoooodně voleb.
 Nejsnadnější způsob, jak si určit ty které jsou potřeba, je podívat se pomocí
 funkce _phpinfo()_ na parametry PHP na produkčním stroji. Případně si to trochu
-proškrtat o věci které bezpečně vím že nepoužívám.  Naopak je potřeba doplnit
-několik důležitých voleb. Prefix - neboli adresář, do kterého se zapíše výsledek
+proškrtat o věci, které v aplikaci 100% nepoužívám.  
+
+Naopak doplnit se musí několik důležitých voleb. Prefix - neboli adresář, do kterého se zapíše výsledek
 kompilace, cestu ke konfiguračnímu souboru a konečně podporu fastcgi.
 
     :::bash
@@ -78,19 +78,19 @@ Patch se aplikuje příkazem
     :::bash
     patch -p0 -b < php-old.patch
 
-Pokud konfigurace proběhene v pořádku, následuje klasická mantra make, make
-install. Pouštět make test asi nemá moc smysl, bavíme se tu o legacy kódu. Pokud
+Pokud konfigurace proběhene v pořádku, následuje klasická mantra _make_, _make
+install_. Pouštět _make test_ asi nemá moc smysl, jde o legacy kód. Pokud
 šlo všechno jak má, tak se v adresáři  /usr/local/php52 nachází nová instalace
-starého PHP.
+starého PHP. Pokud ne, obvykle chybí nějaká knihovna a je potřeba jí doinstalovat.
 
-Dál je potřeba vytvořit adresář pro konfigurační soubor a ten do něj nahrát.
+Dál je potřeba vytvořit adresář pro konfigurační soubor a ten do něj nakopírovat.
 Doporučené nastavení php máme k dispozici spolu se zdrojáky.
 
     :::bash
     mkdir /etc/php52 cp php.ini-recommended /etc/php52/php.ini
 
-PHP můžeme provozovat různě, ne jen přes mod_php. Právě toho využijeme a druhou
-verzi proženeme přes mod_fcpgi. K tomu je potřeba nejprve vytvořit konfigurační
+PHP můžeme provozovat různě, ne jen přes _mod_php_. Právě toho využijeme a druhou
+verzi proženeme přes _mod_fcpgi_. K tomu je potřeba nejprve vytvořit konfigurační
 wrapper - soubor _/usr/local/php52/bin/fcgiwrapper.sh_ .
 
 Měl by obsahovat toto:
@@ -105,7 +105,7 @@ Měl by obsahovat toto:
 Cíl už je na dohled. Zbývá vytvořit dva virtuální servery. Pro ně potřebujeme
 DNS jména. Není ale nutné hned utíkat za správcem DNS pro vaší doménu. Pro
 vývojářský stroj docela postačí lokální a testovací jména - local, localdomain,
-example.com atd.. Do souboru /etc/hosts tedy můžeme napsat například tento
+example.com atd.. Do souboru _/etc/hosts_ tedy můžeme napsat například tento
 řádek:
 
     :::bash
