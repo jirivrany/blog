@@ -9,5 +9,6 @@
 
 ##Nástroje všeho druhu
 
+* [Dvě verze PHP na jednom serveru](/tools/dve-verze-php-na-jednom-serveru/) - květen 2014
 * [GruntJS - nechte nudnou práci strojům](/tools/gruntjs-nechte-nudnou-praci-strojum/) - prosinec 2013
 
