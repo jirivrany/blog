@@ -78,7 +78,7 @@ Patch se aplikuje příkazem
     :::bash
     patch -p0 -b < php-old.patch
 
-Pokud konfigurace proběhene v pořádku, následuje klasická mantra _make_, _make
+Pokud konfigurace proběhne v pořádku, následuje klasická mantra _make_, _make
 install_. Pouštět _make test_ asi nemá moc smysl, jde o legacy kód. Pokud
 šlo všechno jak má, tak se v adresáři  /usr/local/php52 nachází nová instalace
 starého PHP. Pokud ne, obvykle chybí nějaká knihovna a je potřeba jí doinstalovat.
